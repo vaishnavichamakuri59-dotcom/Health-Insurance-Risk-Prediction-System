@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Insurance Risk Assessment</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg p-5" style="max-width:900px; margin:auto;">
+
+        <h2 class="text-center mb-3">Health Insurance Risk Assessment</h2>
+
+        <p class="text-center text-muted mb-4">
+            Enter customer details to generate an insurance risk evaluation report.
+        </p>
+
+        <p class="text-center text-primary fw-semibold">
+            {{ accuracy_text }}
+        </p>
+
+        <hr class="mb-4" style="border-top: 2px solid #dee2e6;">
+
+        <form action="/predict" method="post">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Age</label>
+                    <input type="number" name="age" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Gender</label>
+                    <select name="sex" class="form-select">
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">BMI</label>
+                    <input type="number" step="0.1" name="bmi" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Number of Children</label>
+                    <input type="number" name="children" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Smoking Status</label>
+                    <select name="smoker" class="form-select">
+                        <option value="0">Non-Smoker</option>
+                        <option value="1">Smoker</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <label class="form-label">Region</label>
+                    <select name="region" class="form-select">
+                        <option value="northwest">Northwest</option>
+                        <option value="southeast">Southeast</option>
+                        <option value="southwest">Southwest</option>
+                        <option value="northeast">Northeast</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-5 py-2 fs-5 fw-semibold">
+                    <span id="btnText">Generate Risk Report</span>
+                    <span id="spinner" class="spinner-border spinner-border-sm d-none"></span>
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

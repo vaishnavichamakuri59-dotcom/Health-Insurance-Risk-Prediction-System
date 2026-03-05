@@ -1,0 +1,126 @@
+/* ===== GLOBAL STYLES ===== */
+
+body {
+    background: url("../images/insurance_bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== CARD STYLING ===== */
+
+.card {
+    border-radius: 18px;
+    border: none;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
+}
+.card {
+    backdrop-filter: blur(8px);
+}
+
+/* ===== HEADINGS ===== */
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #222;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* ===== FORM LABELS ===== */
+
+.form-label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* ===== INPUT FIELDS ===== */
+
+.form-control,
+.form-select {
+    font-size: 17px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.form-control:focus,
+.form-select:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 0 0.2rem rgba(42, 82, 152, 0.2);
+}
+
+/* ===== BUTTON STYLING ===== */
+
+.btn-primary {
+    background: linear-gradient(to right, #2a5298, #1e3c72);
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== DIVIDER ===== */
+
+hr {
+    border-top: 2px solid #dee2e6;
+}
+
+/* ===== RESULT PAGE STYLING ===== */
+
+.alert {
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.result-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #198754;
+}
+
+.risk-box {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* ===== FEATURE IMAGE ===== */
+
+.feature-img {
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== RESPONSIVE FIX ===== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}

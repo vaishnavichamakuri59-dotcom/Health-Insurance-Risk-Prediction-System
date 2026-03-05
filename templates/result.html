@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card p-4 shadow">
+
+        <h3 class="text-center mb-4">Health Insurance Risk Assessment Report</h3>
+
+        <div class="alert alert-info text-center">
+            {{ accuracy_text }}
+        </div>
+        
+        <div class="card p-3 mb-3">
+           <h5 class="text-center mb-3">Customer Profile Summary</h5>
+           <div class="row text-center">
+               <div class="col-md-3"><strong>Age:</strong> {{ age }}</div>
+               <div class="col-md-3"><strong>BMI:</strong> {{ bmi }}</div>
+               <div class="col-md-3"><strong>Smoking:</strong> {{ smoker }}</div>
+               <div class="col-md-3"><strong>Region:</strong> {{ region }}</div>
+           </div>
+        </div>
+
+        <div class="card p-3 mb-3 text-center">
+            <h4>Estimated Insurance Charges</h4>
+            <h2 class="text-success">{{ amount }}</h2>
+        </div>
+
+        <div class="card p-3 mb-3 text-center">
+            <h4>Risk Category</h4>
+            <div class="alert alert-{{ risk_color }} text-center fs-4 fw-bold">
+                {{ risk }}
+            </div>
+        </div>
+
+        <div class="card p-3 mb-3">
+           <p class="mb-0 text-center">
+           This risk assessment is based on demographic and health-related attributes.<br>
+           Smoking status and BMI significantly influence insurance pricing.
+           </p>
+        </div>
+
+        <div class="text-center">
+            <h5>Feature Importance Analysis</h5>
+            <img src="{{ url_for('static', filename='feature_importance.png') }}" class="img-fluid mt-2">
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/download_pdf?amount={{ amount }}&risk={{ risk }}
+                &age={{ age }}&bmi={{ bmi }}
+                &smoker={{ smoker }}&region={{ region }}"
+                class="btn btn-success mt-3">Download PDF Report</a><br><br> 
+            <a href="/" class="btn btn-secondary">Assess Another Profile</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
